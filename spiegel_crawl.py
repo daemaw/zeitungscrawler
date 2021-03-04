@@ -19,7 +19,7 @@ headlines = main.find_all('a', attrs={'title' : True})
 datumsangaben = doc.find_all(attrs = {'class' : 'font-sansUI text-shade-dark text-s mt-4'})
 info = doc.find_all(attrs = {'class' : 'font-sansUI text-shade-dark text-s mt-4'})
 
-with open(r"C:\Users\z0040scd\Documents\SPIEGEL.txt", "w", encoding="utf-8") as file:
+with open(r"spiegel.csv", "w", encoding="utf-8") as file:
     for infos, datum, headline in zip(info, datumsangaben, headlines):
         amade = requests.get(headline['href'])
         ljulia = amade.text
