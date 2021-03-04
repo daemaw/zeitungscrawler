@@ -32,7 +32,7 @@ def crawl_category(cat):
         if a.find('title', string='SZ Plus'):
             is_paywall = 'True'
         datetime = crawl_article(a['href'])
-        file = open('sueddeutsche.csv', 'a')
+        file = open('sueddeutsche.csv', 'a', encoding='utf-8')
         csv_string += category + ',' + datetime + ',' + title + ',' + is_paywall + '\n'
         file.write(csv_string)
         file.close()
